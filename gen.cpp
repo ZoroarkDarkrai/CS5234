@@ -16,26 +16,16 @@ int main() {
     ios::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
 
-    vector<int> num;
-    int cur = 1, occ = 0;
-    double now = 1;
     rep(i, 1000000) {
-        if (occ > now) {
+        int cur = 1;
+        while (((double)rng() / UINT_MAX) <= 0.9) {
             cur++;
-            occ = 0;
-            now *= 1.1;
         }
-        num.pb(cur);
-        occ++;
-    }
-
-    shuffle(num.begin(), num.end(), rng);
-    rep(i, 1000000) {
-        //cout << num[i] << endl;
+        //cout << cur << endl;
         if (i % 100 == 0) memset(seen, 0, sizeof(seen));
-        if (seen[num[i]]) continue;
-        seen[num[i]] = 1;
-        cnt[num[i]]++;
+        if (seen[cur]) continue;
+        seen[cur] = 1;
+        cnt[cur]++;
     }
     vector<pair<int, int>> v;
     rep(i, 121) v.pb({ cnt[i + 1],i + 1 });

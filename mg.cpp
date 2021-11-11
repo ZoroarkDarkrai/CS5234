@@ -18,9 +18,8 @@ struct item {
     }
 
 };
-const int n = 60;
 const int k = 17;
-const int p = 2903;
+const int p = 2900;
 bitset<p> bf;
 set<item> c;
 
@@ -49,7 +48,8 @@ void setBf(int x) {
 }
 
 
-int main() {
+int main(int argc, char** argv) {
+    int n = stoi(argv[1]);
     ios::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
     rep(i, k) {

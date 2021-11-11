@@ -14,7 +14,7 @@ struct item {
     int cnt = 0;
     bool state = 1;
 };
-const int n = 15;
+const int n = 30;
 vector<item> b[n];
 item c[n];
 
